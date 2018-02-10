@@ -4,7 +4,7 @@
 
 1. Rename ```ExampleCongfig.php``` to ```Config.php```
 2. Replace ```ADMIN_EMAIL```, ```NOREPLY_EMAIL```, ```ADMIN_NAME``` and ```WEB_ADDRESS```.
-3. Create page that uses the API endpoints described below.
+3. Create page that uses the API endpoints described below. 
 
 ## How to use
 This acts as a submit, approve and get API for a website.
