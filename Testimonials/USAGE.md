@@ -1,4 +1,3 @@
-
 # Testimonials Module
 
 ## How to use
@@ -20,4 +19,4 @@ Response:
 ```GET /get.php```
 
 Response: 
-```{status: status, testimonials: [testimonials, ...}```
+```{status: status, testimonials: [testimonials, ...]}```
