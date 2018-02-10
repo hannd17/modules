@@ -34,6 +34,11 @@ include "./Functions.php";
             margin: 5px;
             
             transition: all .2s ease-out;
+            
+            border-radius: 0px;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+
         }
         
         #t-form .message{
