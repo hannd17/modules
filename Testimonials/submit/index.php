@@ -42,7 +42,7 @@ if(strlen($name) < 3 || strlen($testimonial) < 3){
         $message = "<h1>New testimonial from $name.</h1>";
         $message .= "<p><strong>Hi " . ADMIN_NAME . ",</strong> a new testimonial has been pusblished on your website.</p>";
         $message .= "<p><strong>Name:</strong> $name<br>";
-        $message .= "<strong>Email:</strong> $testimonial<br></p>";
+        $message .= "<strong>Testimonial:</strong> $testimonial<br></p>";
         $message .= "<p>To approve this testimonial, please click <a href='" . WEB_ADDRESS . "/Testimonials/approve?uid=$uuid'>here</a>.";
         $message .= "<p><strong>Kind regards,</strong> your website.</p>";
         
