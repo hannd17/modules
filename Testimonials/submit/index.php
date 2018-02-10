@@ -19,10 +19,20 @@ $uuid = hash("sha256", $testimonail . $name . $time);
 $status = "true";
 $output = "Your testimonial has been sent.";
 
-# Write testimonial to a txt file
-if(file_put_contents("submissions/$uuid.txt", "{name: \"$name\", testimonial: \"$testimonial\"}")){
+$data = array();
+$data["name"] = $name;
+$data["testimonial"] = $testimonial;
+
+if(strlen($name) < 3 || strlen($testimonial) < 3){
+    # The name or testimonial is too short. Preventing spam?
+    
+    $status = "false";
+    $output = "Please fill in all of the boxes.";
+    
+} else if(file_put_contents(AUTO_APPROVE ? "submissions/approved/$uuid.txt" : "submissions/$uuid.txt", json_encode($data))){
+    # Write testimonial to a txt file
     # The file was written successfully, let's notify the admin
-    if(ENABLE_MAIL){
+    if(ENABLE_MAIL && !AUTO_APPROVE){
         
         # Build approval email
         $headers = "From: " . NOREPLY_EMAIL . "\r\n";

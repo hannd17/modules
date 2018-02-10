@@ -9,4 +9,6 @@ define("WEB_ADDRESS", "http://example.com"); # Your website address, including h
 define("ADMIN_NAME", "Admin"); # Your name.
 define("ENABLE_MAIL", true); # Enable email sending. 
 
+define("AUTO_APPROVE", false); # Set true to skip email sending
+
 ?>

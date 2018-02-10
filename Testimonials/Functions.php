@@ -5,13 +5,16 @@
 # Send JSON to browser.
 function fnSendJSON($data){
     header("Content-Type: application/json");
-    echo $data;
+    echo json_encode($data);
     exit();
 }
 
 # Send API response (status, message) *required.
 function fnAPIRespond($status, $output){
-    fnSendJSON("{status: $status, message: $output}");
+    $data = array();
+    $data["status"] = $status;
+    $data["message"] = $output;
+    fnSendJSON($data);
 }
 
 function fn404(){

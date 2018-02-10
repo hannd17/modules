@@ -7,17 +7,17 @@ include "../Functions.php";
 
 $testimonials = array_diff(scandir("../submit/submissions/approved"), array("..", "."));
 
-$data = "[";
+
+$data = array();
+
 $i = 0;
 $max = 5;
 foreach($testimonials as $uuid){
     $testimonial = file_get_contents("../submit/submissions/approved/$uuid");
-    $data .= $testimonial;
+    $data[$i] = $testimonial;
     $i++;
     if($i == $max)break;
-    if($i < count($testimonials))$data .= ", ";
 }
-$data .= "]";
 
 # Send API response
 fnSendJSON($data);
