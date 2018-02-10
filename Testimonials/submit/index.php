@@ -18,12 +18,28 @@ $uuid = hash("sha256", $testimonail . $name . $time);
 
 # Send approval email
 
+$headers = "From: " . NOREPLY_EMAIL . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
+$subejct = "New Testimonial from $name";
 
+$message = "<style>body{font-family: Helvetica}</style>";
+$message .= "<h1>New testimonial from $name.</h1>";
+$message .= "<p><strong>Hi " . ADMIN_NAME . ",</strong> a new testimonial has been pusblished on your website.</p>";
+
+$message .= "<p><strong>Name:</strong> $name<br>";
+$message .= "<strong>Email:</strong> $testimonial<br></p>";
+
+$message .= "<p>To approve this testimonial, please click <a href='" . WEB_ADDRESS . "/Testimonials/approve?uid=$uuid'>here</a>.";
+
+$message .= "<p><strong>Regards, " . WEB_ADDRESS . ".</strong></p>";
+
+echo $message;
 
 # Send API response
-header('Content-Type: application/json');
-$data = "{status: true, message: 'Success!'}";
-echo $data;
+# header('Content-Type: application/json');
+# $data = "{status: true, message: 'Success!'}";
+# echo $data;
 
 ?>
