@@ -1,12 +1,12 @@
 <?php
 
-define("ADMIN_EMAIL", "example@example.co.uk");
+define("ADMIN_EMAIL", "example@example.com");
 define("ADMIN_NAME", "Admin");
-define("NOREPLY_EMAIL", "example@example.co.uk");
-define("WEB_ADDRESS", "http://localhost");
+define("NOREPLY_EMAIL", "example@example.com");
+define("WEB_ADDRESS", "http://example.com");
 
 define("LOCAL_DEBUG", false);
 
-define("ENABLE_MAIL", false);
+define("ENABLE_MAIL", true); # Enable email sending. 
 
 ?>
