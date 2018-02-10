@@ -1,3 +1,4 @@
+
 # Testimonials Module
 
 ## How to use
@@ -5,28 +6,22 @@ This acts as a submit, approve and get API for a website.
 It will return responses in JSON format.
 
 ### Submitting a testimonial
-'''bash
-POST /submit.php {text: text, name: name}
-'''
+```POST /submit.php {text: text, name: name}```
 Response: 
-'''javscript
+```JSON
 {status: status, message: message}
-'''
+```
 
 ### Approving a testimonial
-'''bash
-GET /approve.php {uid: UNIQUE TESTIMONIAL ID}
-'''
+```GET /approve.php {uid: UNIQUE TESTIMONIAL ID}```
 Response: 
-'''javascript
+```JSON
 {status: status, message: message}
-'''
+```
 
 ### Retrieving testimonials
-'''bash 
-GET /get.php
-'''
+```GET /get.php'''
 Response: 
-'''javascript
+```JSON
 {status: status, testimonials: [testimonials, ...}
-'''
+```
