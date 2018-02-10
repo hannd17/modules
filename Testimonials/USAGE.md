@@ -5,18 +5,18 @@ This acts as a submit, approve and get API for a website.
 It will return responses in JSON format.
 
 ### Submitting a testimonial
-```POST /submit.php {text: text, name: name}```
+```POST /submit {testimonial: testimonial, name: name}```
 Response: 
 ```{status: status, message: message}```
 
 ### Approving a testimonial
-```GET /approve.php {uid: UNIQUE TESTIMONIAL ID}```
+```GET /approve {uid: UNIQUE TESTIMONIAL ID}```
 
 Response: 
 ```{status: status, message: message}```
 
 ### Retrieving testimonials
-```GET /get.php```
+```GET /get```
 
 Response: 
-```{status: status, testimonials: [testimonials, ...]}```
+```[testimonial, ...]```
