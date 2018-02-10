@@ -117,7 +117,7 @@ include "./Functions.php";
             r.open("GET", url, true);
 
             r.onload = function(){
-                console.log(r.response);
+                //console.log(r.response);
                 data = JSON.parse(r.response);
                 m.innerHTML = data.message;
                 m.classList.add("active");
@@ -145,7 +145,7 @@ include "./Functions.php";
                     document.getElementById("testimonials").innerHTML = "";
                     for(x of data){
                         testimonial = JSON.parse(x);
-                        console.log(testimonial);
+                        //console.log(testimonial);
                         
                         t_el = document.createElement("div");
                         t_el.classList.add("testimonial");

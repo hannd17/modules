@@ -13,7 +13,7 @@ if(!isset($_GET["testimonial"]) || !isset($_GET["name"])){
 $testimonial = $_GET["testimonial"];
 $name = $_GET["name"];
 $time = microtime();
-$uuid = hash("sha256", $testimonail . $name . $time);
+$uuid = hash("sha256", $testimonial . $name . $time);
 
 # Set status and message
 $status = "true";
@@ -38,7 +38,7 @@ if(strlen($name) < 3 || strlen($testimonial) < 3){
         $headers = "From: " . NOREPLY_EMAIL . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $subejct = "New Testimonial from $name";
+        $subject = "New Testimonial from $name";
         $message = "<style>body{font-family: Helvetica}</style>";
         $message .= "<h1>New testimonial from $name.</h1>";
         $message .= "<p><strong>Hi " . ADMIN_NAME . ",</strong> a new testimonial has been pusblished on your website.</p>";
