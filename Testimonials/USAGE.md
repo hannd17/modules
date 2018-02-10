@@ -1,5 +1,10 @@
 # Testimonials Module
 
+## Setup
+
+1. Rename ExampleCongfig.php to COnfig.php
+2. Replace ADMIN_EMAIL, ADMIN_NAME and WEB_ADDRESS
+
 ## How to use
 This acts as a submit, approve and get API for a website.
 It will return responses in JSON format.
