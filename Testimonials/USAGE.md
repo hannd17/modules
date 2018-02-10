@@ -20,3 +20,7 @@ Response:
 
 Response: 
 ```[testimonial, ...]```
+
+## Todo:
+
+- Create a setup page which will allow users to enter the defines needed in Config.php
