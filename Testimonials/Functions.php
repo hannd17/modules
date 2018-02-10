@@ -2,16 +2,16 @@
 
 # Module Functions
 
-# Send API response as JSON
-function fnAPIRespond($status, $output){
-    fnSendJSON("{status: $status, message: $output}");
-}
-
-# Send API response as JSON
+# Send JSON to browser.
 function fnSendJSON($data){
     header("Content-Type: application/json");
     echo $data;
     exit();
+}
+
+# Send API response (status, message) *required.
+function fnAPIRespond($status, $output){
+    fnSendJSON("{status: $status, message: $output}");
 }
 
 function fn404(){
