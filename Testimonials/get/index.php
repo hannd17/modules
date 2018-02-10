@@ -1,5 +1,8 @@
 <?php
 
+include "../Config.php";
+include "../Functions.php";
+
 # Get approved testimonials and return a JSON object with text name and date.
 
 $testimonials = array_diff(scandir("../submit/submissions/approved"), array("..", "."));
@@ -17,7 +20,6 @@ foreach($testimonials as $uuid){
 $data .= "]";
 
 # Send API response
-header("Content-Type: application/json");
-echo $data;
+fnSendJSON($data);
     
 ?>

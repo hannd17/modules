@@ -6,9 +6,7 @@ include "../Functions.php";
 # Submit a testimonial using post
 
 if(!isset($_GET["testimonial"]) || !isset($_GET["name"])){
-    header("HTTP/1.0 404 not found");
-    echo "Your request could not be completed.";
-    exit();
+    fn404();
 }
 
 # Generate testimonial information
@@ -46,8 +44,6 @@ if(file_put_contents("submissions/$uuid.txt", "{name: \"$name\", testimonial: \"
 };
 
 # Send API response
-header("Content-Type: application/json");
-$data = "{status: $status, message: $output}";
-echo $data;
+fnAPIRespond($status, $output);
 
 ?>

@@ -1,11 +1,12 @@
 <?php
 
+include "../Config.php";
+include "../Functions.php";
+
 # Approve a testimonial from a given unique ID.
 
 if(!isset($_GET["uid"])){
-    header("HTTP/1.0 404 not found");
-    echo "Your request could not be completed.";
-    exit();
+    fn404();
 }
 
 $uuid = $_GET["uid"];
@@ -29,14 +30,10 @@ if(file_exists("../submit/submissions/$uuid.txt")){
     };
     
 } else {
-    header("HTTP/1.0 404 not found");
-    echo "Your request could not be completed.";
-    exit();
+    fn404();
 }
 
 # Send API response
-header("Content-Type: application/json");
-$data = "{status: $status, message: $output}";
-echo $data;
+fnAPIRespond($status, $output);
 
 ?>
