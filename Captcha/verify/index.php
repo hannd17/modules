@@ -10,7 +10,10 @@ if(!isset($_GET["uid"]) || !isset($_GET["captcha"])){
     fn404();
 }
 
-$captcha_hash = hash("sha256", $_GET["captcha"] . CAPTCHA_SALT);
+$captcha_hash = hash("sha256", strtoupper($_GET["captcha"]) . CAPTCHA_SALT);
+
+$status = "";
+$message = "";
 
 if($captcha_hash == $_GET["uid"]){
     // Code == hash
@@ -18,7 +21,7 @@ if($captcha_hash == $_GET["uid"]){
     $message = "You shall now pass.";
 } else {
     $status = "false";
-    $message = "You shall not pass."
+    $message = "You shall not pass.";
 }
 
 fnAPIRespond($status, $message);
